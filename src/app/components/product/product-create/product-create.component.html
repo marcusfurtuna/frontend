@@ -1,0 +1,37 @@
+<mat-card>
+    <mat-card-title>Novo Cliente</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" required [(ngModel)]="product.nome" name="nome">
+        </mat-form-field>
+ 
+        <mat-radio-group  (ngModelChange)="onFirstGroupChange()" [(ngModel)]="product.tipo_pessoa" name="tipo_pessoa" aria-label="Select an option">           
+            <label>Tipo de Pessoa: </label>
+            <mat-radio-button  value="PF"  >Pessoa Física </mat-radio-button>
+            <mat-radio-button  value="PJ" >Pessoa Jurídica</mat-radio-button>
+          </mat-radio-group>   
+          
+       
+            <mat-form-field >
+                <input matInput placeholder="CPF" [disabled]="isPF" [(ngModel)]="product.cpf" name="cpf">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="RG"[disabled]="isPF" [(ngModel)]="product.rg" name="rg">
+            </mat-form-field>
+     
+            <mat-form-field>
+                <input matInput placeholder="CNPJ" [disabled]="isPJ" [(ngModel)]="product.cnpj" name="cnpj">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="IE" [disabled]="isPJ" [(ngModel)]="product.ie" name="ie">
+            </mat-form-field>
+       
+    </form>
+    <button mat-raised-button (click)="createProduct()" color="primary">
+        Salvar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>
