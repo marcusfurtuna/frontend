@@ -4,7 +4,7 @@ export interface Product {
     rg: string
     cpf: string
     tipo_pessoa: string
-    situacao: boolean
+    situacao: boolean   
     cnpj: string
     ie: string
 
